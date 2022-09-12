@@ -35,7 +35,7 @@ arrayItems.forEach(element => {
     `)
 });
 
-var URLRequest = "127.0.0.1:80";
+var URLRequest = "192.168.1.1:80";
 
 $(".item-grid").click(function(){
   console.log("send Request")

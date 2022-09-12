@@ -43,6 +43,7 @@ $(".item-grid").click(function(){
 });
 
 $("#setIP").click(function(){
+  console.log("SET IP");
   var name = prompt("Please enter IP");
   if (name != null){
     URLRequest = name

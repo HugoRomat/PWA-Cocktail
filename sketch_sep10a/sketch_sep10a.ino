@@ -31,11 +31,13 @@ void setup()
   server.on("/cocktail", handleSpecificArg);
 
   server.begin();
+
+  Serial.print("[Server Connected] ");
+  Serial.println(WiFi.softAPIP());
 }
 
 void loop() {
-  Serial.print("[Server Connected] ");
-  Serial.println(WiFi.softAPIP());
+  
   server.handleClient();
   delay(500);
 }

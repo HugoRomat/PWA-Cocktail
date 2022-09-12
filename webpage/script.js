@@ -52,6 +52,19 @@ $("#setIP").click(function(){
 });
 
 
+$("#ping").click(function(){
+  console.log("ping");
+  var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      console.log(this.responseText)
+    };
+    var adress = "http://" + URLRequest;
+    alert(adress)
+    xhttp.open("GET", adress, true);
+    xhttp.send();
+});
+
+
 /*https://stackoverflow.com/questions/61293702/async-webserver-how-to-create-server-on-with-a-variable-as-route*/
 function sendRequest(cocktailName){
   var xhttp = new XMLHttpRequest();

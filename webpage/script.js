@@ -58,8 +58,8 @@ function sendRequest(cocktailName){
     xhttp.onreadystatechange = function() {
       console.log(this.responseText)
     };
-    var adress = "http://"+ URLRequest + "/cocktail?cocktailName=" + cocktailName;
-    console.log(adress)
+    var adress = URLRequest + "/cocktail?cocktailName=" + cocktailName;
+    alert(adress)
     xhttp.open("GET", adress, true);
     xhttp.send();
 }

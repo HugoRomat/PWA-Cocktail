@@ -4,6 +4,10 @@ window.onload = () => {
       console.log("Start worker")
       navigator.serviceWorker.register('sw.js');
   }
+
+  $.get( "192.168.1.1:80", function( data ) {
+    alert( "Load was performed." );
+  });
 }
 console.log("Start")
 var arrayItems = [

@@ -3,7 +3,7 @@ var filesToCache = [
   '/',
   '/index.html',
   '/style.css',
-  '/main.js',
+  '/script.js',
   "/images/mojito.jpg",
   "/images/ricard.jpg",
   "/images/whickycoca.jpg"
@@ -16,6 +16,7 @@ self.addEventListener('install', function(e) {
       return cache.addAll(filesToCache);
     })
   );
+  self.skipWaiting();
 });
 
 /* Serve cached content when offline */

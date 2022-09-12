@@ -62,6 +62,11 @@ $("#ping").click(function(){
     alert(adress)
     xhttp.open("GET", adress, true);
     xhttp.send();
+
+
+    $.get( "192.168.1.1:80", function( data ) {
+      alert( "Load was performed." );
+    });
 });
 
 

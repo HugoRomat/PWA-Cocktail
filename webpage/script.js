@@ -3,7 +3,7 @@ window.onload = () => {
   
     if ('serviceWorker' in navigator) {
       console.log("Start worker")
-      navigator.serviceWorker.register('./sw.js');
+      navigator.serviceWorker.register('sw.js');
     }
   }
 

@@ -1,13 +1,9 @@
 window.onload = () => {
     'use strict';
   if ('serviceWorker' in navigator) {
-      console.log("Start worker")
+      console.log("Start worker2s")
       navigator.serviceWorker.register('sw.js');
   }
-
-  $.get( "192.168.1.1:80", function( data ) {
-    alert( "Load was performed." );
-  });
 }
 console.log("Start")
 var arrayItems = [
@@ -60,17 +56,19 @@ $("#ping").click(function(){
   console.log("ping");
   var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-      console.log(this.responseText)
+      if (xhttp.readyState === 4){
+        var response = xhttp.responseText;
+        if (xhttp.status === 200){
+          alert("CONNECTED", response)
+        } else {
+          alert("FAIL")
+        }
+      }
     };
     var adress = "http://" + URLRequest;
     alert(adress)
     xhttp.open("GET", adress, true);
     xhttp.send();
-
-
-    $.get( "192.168.1.1:80", function( data ) {
-      alert( "Load was performed." );
-    });
 });
 
 
@@ -78,7 +76,14 @@ $("#ping").click(function(){
 function sendRequest(cocktailName){
   var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-      console.log(this.responseText)
+      if (xhttp.readyState === 4){
+        var response = xhttp.responseText;
+        if (xhttp.status === 200){
+          alert("OK", response)
+        } else {
+          alert("FAIL")
+        }
+      }
     };
     var adress = "http://" + URLRequest + "/cocktail?cocktailName=" + cocktailName;
     alert(adress)

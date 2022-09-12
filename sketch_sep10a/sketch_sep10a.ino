@@ -30,6 +30,7 @@ void setup()
   server.on("/", handle_OnConnect);
   server.on("/cocktail", handleSpecificArg);
 
+  server.enableCORS(true);
   server.begin();
 
   Serial.print("[Server Connected] ");
@@ -55,5 +56,6 @@ void handleSpecificArg() {
 }
 void handle_OnConnect() {
   Serial.println("Someonte has connected");
+  
   server.send(200, "text/plain", "OK"); 
 }

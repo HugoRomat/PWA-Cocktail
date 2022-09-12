@@ -7,15 +7,15 @@ window.onload = () => {
 }
 
 var arrayItems = [
-    {"image": "mojito.jpg", "name": "Mojito", "id": "mojito" },
-    {"image": "whickycoca.jpg", "name": "Whisky Coca", "id": "whco"},
-    {"image": "ricard.jpg", "name": "Ricard", "id": "ricard" },
-    {"image": "mojito.jpg", "name": "Mojito", "id": "mojito" },
-    {"image": "whickycoca.jpg", "name": "Whisky Coca", "id": "whco"},
-    {"image": "ricard.jpg", "name": "Ricard", "id": "ricard" },
-    {"image": "mojito.jpg", "name": "Mojito", "id": "mojito" },
-    {"image": "whickycoca.jpg", "name": "Whisky Coca", "id": "whco"},
-    {"image": "ricard.jpg", "name": "Ricard", "id": "ricard" }
+    {"image": "mojito.jpg", "name": "Mojito", "id": "1" },
+    {"image": "whickycoca.jpg", "name": "Whisky Coca", "id": "2"},
+    {"image": "ricard.jpg", "name": "Ricard", "id": "3" },
+    {"image": "mojito.jpg", "name": "Mojito", "id": "4" },
+    {"image": "whickycoca.jpg", "name": "Whisky Coca", "id": "5"},
+    {"image": "ricard.jpg", "name": "Ricard", "id": "6" },
+    {"image": "mojito.jpg", "name": "Mojito", "id": "7" },
+    {"image": "whickycoca.jpg", "name": "Whisky Coca", "id": "8"},
+    {"image": "ricard.jpg", "name": "Ricard", "id": "9" }
 ]
 //Sort the array
 arrayItems.sort(function(a, b) {

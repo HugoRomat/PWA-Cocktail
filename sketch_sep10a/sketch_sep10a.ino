@@ -26,24 +26,28 @@ void setup()
   
   Serial.print("Soft-AP IP address = ");
   Serial.println(WiFi.softAPIP());
-
+  server.enableCORS(true);
   server.on("/", handle_OnConnect);
   server.on("/cocktail", handleSpecificArg);
+//  server.on("/cocktail", HTTP_GET, [](AsyncWebServerRequest *request){
+//      if (request->args() == 0) // no arguments attached -> STATUS_BAD_REQUEST
+//          return request->send(400, "text/plain", F("ERROR: Bad or no arguments"));
+//     uint8_t dhtSensor = request->arg("cocktailName").toInt(); 
+//     request->send(200, "text/plain", readDSTemperature(dhtSensor).c_str());
+// });
 
-  server.enableCORS(true);
   server.begin();
-
-  Serial.print("[Server Connected] ");
-  Serial.println(WiFi.softAPIP());
 }
 
 void loop() {
-  
+  Serial.print("[Server Connected] ");
+  Serial.println(WiFi.softAPIP());
   server.handleClient();
   delay(500);
 }
 
 void handleSpecificArg() { 
+
   String message = "";
   if (server.arg("cocktailName")== ""){     //Parameter not found
     message = "Temperature Argument not found";
@@ -51,11 +55,9 @@ void handleSpecificArg() {
     message = "Temperature Argument = ";
     message += server.arg("cocktailName");     //Gets the value of the query parameter 
   }
-  Serial.println(message);
   server.send(200, "text/plain", message);          //Returns the HTTP response
 }
 void handle_OnConnect() {
   Serial.println("Someonte has connected");
-  
   server.send(200, "text/plain", "OK"); 
 }
